@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+    /* Fade-in Animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    </style>
+    <script>
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.fade-in');
+        elements.forEach(element => {
+            if (isElementInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+    });
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    </script>
+
+    <title>Your Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: black;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .project {
+            margin: 20px 0;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .chart-container {
+            text-align: center;
+        }
+
+        footer {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#events">Important Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container" id="about"> <!-- Add class here -->
+    <h2>About Me</h2>
+    <p>Write a brief introduction about yourself here.</p>
+     </div>
+
+    <div class="container" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of your first project.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of your second project.</p>
+        </div>
+        <div class="project">
+            <h3>Project 3</h3>
+            <p>Description of your third project.</p>
+        </div>
+        <div class="project">
+            <h3>Project 4</h3>
+            <p>Description of your fourth project.</p>
+        </div>
+        <div class="project">
+            <h3>Project 5</h3>
+            <p>Description of your fifth project.</p>
+        </div>
+        <div class="project">
+            <h3>Project 6</h3>
+            <p>Description of your sixth project.</p>
+        </div>
+        <div class="project">
+            <h3>Project 7</h3>
+            <p>Description of your seventh project.</p>
+        </div>
+    </div>
+
+    <div class="container" id="hobbies">
+        <h2>Hobbies</h2>
+        <p>Write about your hobbies and interests here.</p>
+    </div>
+
+    <div class="container" id="events">
+        <h2>Important Events</h2>
+        <p>Highlight some of the important events or milestones in your career or personal life.</p>
+    </div>
+
+    <div class="container" id="contact">
+        <h2>Contact</h2>
+        <p>Contact information and a contact form can be added here.</p>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <footer>
+        &copy; 2023 Your Name
+    </footer>
+</body>
+</html>
